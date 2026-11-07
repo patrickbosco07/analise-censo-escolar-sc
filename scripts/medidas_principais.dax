@@ -1,0 +1,79 @@
+% Escolas Climatizadas =
+
+ DIVIDE(
+
+    [Escolas com Climatizacao],
+
+    [Total Escolas],
+
+    0
+
+    )
+
+% Escolas com Lab Informatica =
+
+ DIVIDE([Escolas com Laboratorio Informatica],
+
+ [Total Escolas], 0)
+
+Escolas com Climatizacao =
+
+CALCULATE(
+
+    [Total Escolas],
+
+    'fatos_censo'[QT_SALAS_UTILIZA_CLIMATIZADAS] > 0
+
+)
+
+Escolas com Internet Para Aula =
+
+CALCULATE(
+
+    [Total Escolas],
+
+    'fatos_censo'[IN_INTERNET_APRENDIZAGEM] = 1
+
+)
+
+Escolas com Laboratorio Informatica =
+
+CALCULATE([Total Escolas],
+
+'fatos_censo'[IN_LABORATORIO_INFORMATICA] = 1)
+
+Escolas sem Climatizacao =
+
+CALCULATE(
+
+    [Total Escolas],
+
+    'fatos_censo'[QT_SALAS_UTILIZA_CLIMATIZADAS] = 0
+
+)
+
+Escolas sem Internet para Aula =
+
+CALCULATE(
+
+    [Total Escolas],
+
+    'fatos_censo'[IN_INTERNET_APRENDIZAGEM] = 0
+
+)
+
+Escolas sem Laboratorio Informatica =
+
+CALCULATE([Total Escolas],
+
+'fatos_censo'[IN_LABORATORIO_INFORMATICA] = 0)
+
+MEDIA_QTD_ALUN = 'fatos_censo'[QT_MAT_MED] / 'fatos_censo'[QT_TUR_MED]
+
+Porcentagem De Escolas com Internet Para Aula =
+
+DIVIDE([Escolas com Internet Para Aula],[Total Escolas],0
+
+)
+
+Total Escolas = COUNTROWS('fatos_censo')
