@@ -17,7 +17,7 @@ O modelo é composto por:
   * `dim_mesoregiao`: Nomes e códigos das mesorregiões de Santa Catarina[cite: 7].
 
 *(Insira aqui a Imagem 6 do seu esquema estrela)*
-`![Modelo Estrela](images/modelo_estrela.jpg)`
+`![Modelo Estrela](images/modelo_estrela.jpg)´
 
 ## 📈 Dashboard e Principais Métricas (DAX)
 O painel gerencial foi desenvolvido no Power BI e permite a filtragem dinâmica por **Região do estado** (ex: Norte Catarinense) e **Tipo de Rede Escolar** (Municipal, Estadual, Federal e Privada)[cite: 7].
